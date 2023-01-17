@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.screens.second.SecondFragment"
+    android:background="@drawable/background">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+
+        android:background="@color/transparent"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:listitem="@layout/rv_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_day_param"
+        android:layout_width="380dp"
+        android:layout_height="280dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/layout_bg"
+        app:cardCornerRadius="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_items"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/tv_sunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sunrise 7:36"
+
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_sunset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="265dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sunset 7:36"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_label_avg_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:alpha=".6"
+            android:textColor="@color/white"
+
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_sunrise"
+            android:text="Average temp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_avg_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/tv_label_avg_temp"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_avg_temp"
+            tools:text="2°C"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_label_chance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha=".6"
+            android:textColor="@color/white"
+
+            app:layout_constraintStart_toStartOf="@id/tv_avg_temp"
+            app:layout_constraintTop_toBottomOf="@id/tv_avg_temp"
+            android:text="Chance of rain">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_chance_rain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/tv_label_chance"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_chance"
+            tools:text="14%"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_label_max_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha=".6"
+            android:textColor="@color/white"
+
+            app:layout_constraintStart_toStartOf="@id/tv_chance_rain"
+            app:layout_constraintTop_toBottomOf="@id/tv_chance_rain"
+            android:text="Max wind">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_max_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/tv_label_max_wind"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_max_wind"
+            tools:text="4"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_label_humid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:alpha=".6"
+            android:textColor="@color/white"
+
+            app:layout_constraintStart_toEndOf="@id/tv_label_avg_temp"
+            app:layout_constraintTop_toBottomOf="@id/tv_sunset"
+            android:layout_marginStart="120dp"
+
+            android:text="Humidity">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/tv_label_humid"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_humid"
+            android:textSize="16sp"
+            tools:text="60%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_label_pres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha=".6"
+            android:textColor="@color/white"
+
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintTop_toBottomOf="@id/tv_humidity"
+            android:text="Precipitation">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_precip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/tv_label_pres"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_pres"
+            android:textSize="16sp"
+            android:text="768mmHg">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_label_uv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha=".6"
+            android:textColor="@color/white"
+
+            app:layout_constraintStart_toStartOf="@id/tv_precip"
+            app:layout_constraintTop_toBottomOf="@id/tv_precip"
+            android:text="UV-index">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_uv_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/tv_label_uv"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_uv"
+            android:textSize="16sp"
+            tools:text="2">
+
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
